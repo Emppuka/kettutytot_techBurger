@@ -32,11 +32,11 @@ export function ProductList() {
   }, []);
 
   if (isLoading) {
-    return <p className="text-center">Loading products...</p>;
+    return <p className="bg-amber-800 text-yellow-200 text-center animate-spin">Loading products...</p>;
   }
 
   if (error) {
-    return <p className="text-center text-red-500">{error}</p>;
+    return <p className="bg-red-50 text-center text-red-600 p-8 rounded-2x1">{error}</p>;
   }
 
   return (
