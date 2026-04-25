@@ -1,6 +1,6 @@
 import React, { type ReactNode } from 'react';
 
-interface ModalProps { /*ModalProps sisällä ne tarvittavat jutut*/ 
+interface ModalProps { /*ModalProps sisällä ne tarvittavat jutut, import ModalProps*/ 
   onClose: () => void;
   children: ReactNode;
 }
@@ -25,7 +25,7 @@ const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
           &times;
         </button>
 
-        {/* Rendered Children */}
+        {/* Rendered Children elikkä modalin varsinainen sisältö */}
         <div className="p-6">
           {children}
         </div>
