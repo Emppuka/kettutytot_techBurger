@@ -6,6 +6,7 @@ export function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -40,7 +41,11 @@ export function ProductList() {
   return (
     <section className="grid grid-cols-1 gap-8 md:grid-cols-3">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard 
+        key={product.id}
+        product={product}
+        onSelect={setSelectedProduct}
+         />
       ))}
     </section>
   );
