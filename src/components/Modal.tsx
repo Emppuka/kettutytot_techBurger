@@ -1,6 +1,6 @@
 import React, { type ReactNode } from 'react';
 
-interface ModalProps { /*ModalProps sisällä ne tarvittavat jutut*/ 
+interface ModalProps { /*ModalProps sisällä ne tarvittavat jutut, import ModalProps*/ 
   onClose: () => void;
   children: ReactNode;
 }
