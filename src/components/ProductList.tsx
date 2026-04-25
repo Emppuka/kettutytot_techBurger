@@ -1,6 +1,7 @@
-import  useEffect, { useState }  from "react";
-import  Product  from "../types";
+import  { useEffect, useState }  from "react";
+import  type { Product }  from "../types";
 import  ProductCard  from "./ProductCard";
+import Modal from "./Modal";
 
 export function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -50,3 +51,5 @@ export function ProductList() {
     </section>
   );
 }
+
+export default ProductList;
