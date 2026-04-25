@@ -11,7 +11,7 @@ export function ProductList() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await fetch("https://techburger-api.onrender.com");
+        const response = await fetch("https://techburger-api.onrender.com/api/products");
 
         if (!response.ok) {
           throw new Error("Failed to fetch products");
