@@ -40,15 +40,39 @@ export function ProductList() {
   }
 
   return (
-    <section className="grid grid-cols-1 gap-8 md:grid-cols-3">
-      {products.map((product) => (
-        <ProductCard 
-        key={product.id}
-        product={product}
-        onSelect={setSelectedProduct}
-         />
-      ))}
-    </section>
+    <>
+      <section className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            onSelect={setSelectedProduct}
+          />
+        ))}
+      </section>
+
+      {selectedProduct && (
+        <Modal onClose={() => setSelectedProduct(null)}>
+          <div className="flex flex-col gap-4">
+            <img 
+              src={selectedProduct.image} 
+              className="h-64 object-cover w-full" 
+              alt={selectedProduct.name} 
+            />
+            <div className="px-4">
+              <h2 className="text-xl font-bold">{selectedProduct.name}</h2>
+              <p className="text-gray-500">{selectedProduct.price} €</p>
+              <p className="mt-2 text-sm">{selectedProduct.description}</p>
+            </div>
+            <div className="p-4">
+              <button className="w-full bg-orange-500 text-white py-3 rounded-lg font-bold">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </Modal>
+      )}
+    </>
   );
 }
 
