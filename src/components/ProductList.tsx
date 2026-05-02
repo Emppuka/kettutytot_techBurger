@@ -11,6 +11,7 @@ export function ProductList() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const addToCart = useCartStore((state) => state.addToCart);
+  const categories = ['all', 'burgers', 'sides', 'drinks'];
 
   useEffect(() => {
     async function fetchProducts() {
@@ -56,7 +57,24 @@ export function ProductList() {
     : products.filter((product) => product.category === activeCategory);
 
   return (
-    <>
+    
+  <div>
+    <div className="flex gap-4 mb-8 overflow-x-auto pb-2">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          onClick={() => setActiveCategory(cat)}
+          className={`px-6 py-2 rounded-full font-bold transition-all capitalize ${
+            activeCategory === cat
+              ? "bg-orange-500 text-white shadow-md" // Active Style
+              : "bg-white text-gray-500 border border-gray-200 hover:bg-gray-50" // Inactive Style
+          }`}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
       <section className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {filteredProducts.map((product) => (
           <ProductCard
@@ -93,7 +111,7 @@ export function ProductList() {
           </div>
         </Modal>
       )}
-    </>
+    </div>
   );
 }
 
