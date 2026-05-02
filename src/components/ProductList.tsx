@@ -1,6 +1,6 @@
-import  { useEffect, useState }  from "react";
-import  type { Product }  from "../types";
-import  ProductCard  from "./ProductCard";
+import { useEffect, useState }  from "react";
+import type { Product }  from "../types";
+import ProductCard  from "./ProductCard";
 import Modal from "./Modal";
 
 export function ProductList() {
@@ -8,6 +8,7 @@ export function ProductList() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>("all");
 
   useEffect(() => {
     async function fetchProducts() {
@@ -47,10 +48,15 @@ export function ProductList() {
     return <p className="bg-red-50 text-center text-red-600 p-8 rounded-2x1">{error}</p>;
   }
 
+  const filteredProducts =
+  activeCategory === "all"
+    ? products
+    : products.filter((product) => product.category === activeCategory);
+
   return (
     <>
       <section className="grid grid-cols-1 gap-8 md:grid-cols-3">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard
             key={product.id}
             product={product}
