@@ -2,6 +2,7 @@ import { useEffect, useState }  from "react";
 import type { Product }  from "../types";
 import ProductCard  from "./ProductCard";
 import Modal from "./Modal";
+import { useCartStore } from "../store/useCartStore";
 
 export function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -9,6 +10,7 @@ export function ProductList() {
   const [error, setError] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("all");
+  const addToCart = useCartStore((state) => state.addToCart);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -79,7 +81,12 @@ export function ProductList() {
               <p className="mt-2 text-sm">{selectedProduct.description}</p>
             </div>
             <div className="p-4">
-              <button className="w-full bg-orange-500 text-white py-3 rounded-lg font-bold">
+              <button
+              onClick={() => {
+                  addToCart(selectedProduct);
+                  setSelectedProduct(null);
+                }}
+              className="w-full bg-orange-500 text-white py-3 rounded-lg font-bold">
                 Add to Cart
               </button>
             </div>
