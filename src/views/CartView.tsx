@@ -15,7 +15,17 @@ const CartView = () => {
                     <h2 className='text-xl font-semibold'>You cart is empty!</h2>
                 </div>
             ): (
-                <div className='text-xl'>Items in your cart: {cartItems.length}
+                <div className=''>{cartItems.map((item, index) => (
+                    <div key={item.id} className='flex items-center gap-4 p-4 border-b border-gray-100'>
+                        <div className='flex items-center gap-4 p-4 border-b border-gray-100'>
+                            <img src={item.image}
+                             alt={item.name}
+                             className='w-16 h-16 object-cover rounded-lg' />
+                            <h3 className="font-semibold text-lg">{item.name}</h3>
+                            <h3 className="font-semibold text-lg">{item.price}€</h3>
+                        </div>
+                    </div>
+                ))}
                 </div>
             )}
         </main>
