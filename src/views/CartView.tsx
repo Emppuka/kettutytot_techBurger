@@ -3,6 +3,7 @@ import { useCartStore } from '../store/useCartStore';
 
 const CartView = () => {
     const {cartItems} = useCartStore();
+    const totalPrice = cartItems.reduce((acc , item) => acc + item.price, 0);
 
     return(
         <main className="p-4">
@@ -26,6 +27,16 @@ const CartView = () => {
                         </div>
                     </div>
                 ))}
+                <div className="mt-8 p-6 bg-gray-50 rounded-2xl">
+            <div className="flex justify-between items-center text-xl font-bold">
+              <span>Total Sum:</span>
+              <span className="text-green-600">{totalPrice.toFixed(2)} €</span>
+            </div>
+            
+            <button className="w-full bg-orange-500 text-white py-4 rounded-xl font-bold">
+              Proceed to Checkout
+            </button>
+          </div>
                 </div>
             )}
         </main>
