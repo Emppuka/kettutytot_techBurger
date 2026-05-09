@@ -55,7 +55,7 @@ export function ProductList() {
   return (
     
   <div>
-    <div className="flex gap-4 mb-8 overflow-x-auto pb-2">
+    <div className="flex gap-4 mb-8 overflow-x-auto pb-2 justify-start md:justify-center ">
       {categories.map((cat) => (
         <button
           key={cat}
@@ -71,7 +71,7 @@ export function ProductList() {
       ))}
     </div>
 
-      <section className="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <section className="max-w-[1200px] mx-auto grid grid-cols-1 gap-8 md:grid-cols-3 px-6">
         {filteredProducts.map((product) => (
           <ProductCard
             key={product.id}
