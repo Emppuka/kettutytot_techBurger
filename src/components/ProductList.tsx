@@ -1,8 +1,9 @@
-import { useEffect, useState }  from "react";
-import type { Product }  from "../types";
-import ProductCard  from "./ProductCard";
+import { useEffect, useState } from "react";
+import type { Product } from "../types";
+import ProductCard from "./ProductCard";
 import Modal from "./Modal";
 import { useCartStore } from "../store/useCartStore";
+import { fetchProducts } from "../services/api";
 
 export function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -14,15 +15,10 @@ export function ProductList() {
   const categories = ['all', 'burgers', 'sides', 'drinks'];
 
   useEffect(() => {
-    async function fetchProducts() {
+    async function loadProducts() {
       try {
-        const response = await fetch("https://techburger-api.onrender.com/api/products");
+        const data = await fetchProducts();
 
-        if (!response.ok) {
-          throw new Error("Failed to fetch products");
-        }
-
-        const data: Product[] = await response.json();
         setProducts(data);
       } catch (error) {
         setError("Could not load products");
@@ -32,7 +28,7 @@ export function ProductList() {
       }
     }
 
-    fetchProducts();
+    loadProducts();
   }, []);
 
   if (isLoading) {
