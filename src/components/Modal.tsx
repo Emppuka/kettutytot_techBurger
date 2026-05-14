@@ -19,7 +19,7 @@ const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
       >
         {/* X-nappi */}
         <button 
-          className="absolute top-4 right-4 text-gray-500 hover:text-black text-xl font-bold"
+          className="absolute top-4 right-4 text-gray-500 hover:bg-orange-600 transition-colors shadow-sm active:scale-95 text-xl font-bold"
           onClick={onClose}
         >
           &times;

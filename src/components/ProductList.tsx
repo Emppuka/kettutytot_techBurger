@@ -71,7 +71,7 @@ export function ProductList() {
       ))}
     </div>
 
-      <section className="max-w-[1200px] mx-auto grid grid-cols-1 gap-8 md:grid-cols-3 px-6">
+      <section className="max-w-300 mx-auto grid grid-cols-1 gap-8 md:grid-cols-3 px-6">
         {filteredProducts.map((product) => (
           <ProductCard
             key={product.id}
@@ -100,7 +100,7 @@ export function ProductList() {
                   addToCart(selectedProduct);
                   setSelectedProduct(null);
                 }}
-              className="w-full bg-orange-500 text-white py-3 rounded-lg font-bold">
+              className="w-full bg-orange-500 text-white py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors shadow-sm active:scale-95">
                 Add to Cart
               </button>
             </div>
