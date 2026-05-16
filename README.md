@@ -1,46 +1,35 @@
-🍔 TechBurger - Starter Template
+🍔 TechBurger - Kettutytöt
 
-This is the official starter template for the Online Environment Tools (TT00BI69) course project. It is designed to get you up and running with a modern React development environment in seconds.
-
-🛠️ Tech Stack Included
+🛠️ <b>Tech Stack Included</b>
 
 - React 19 (via Vite)
 - TypeScript (for type-safe development)
 - Tailwind CSS 4 (for rapid UI styling)
+- Zustand (for state management)
+- Vitest (for testing)
 
 
-🚀 Getting Started
+🚀 <b>Want to use this code? (Whatever rocks your boat man)</b>
 
-To start working on your team's project, follow these steps:
+1. Clone to Local: Open your terminal and clone the repo:
 
-1. Use this Template: Click the green "Use this template" button at the top of this page and select "Create a new repository".
+    git clone <repo-url>
 
-2. Invite Teammates: Go to your new repository's Settings > Collaborators and invite your team members and the teacher.
-
-3. Clone to Local: Open your terminal and clone your team's new repository:
-
-    git clone <your-repo-url>
-
-4. Install Dependencies:
+2. Install Dependencies:
 
     cd <project-folder>
     npm install
 
-5. Run Development Server:
+3. Run Development Server:
 
     npm run dev
 
-📂 Project Structure
+📂<b> Project Structure</b>
 
-- src/components/: Place all your React components here.
-- src/types.ts: Define your TypeScript interfaces here (e.g., Product).
+- src/components/: Components of the site are here.
+- src/types.ts: This includes interfaces.
 - src/App.tsx: The main entry point of your application.
-- public/: Place static assets like images or JSON data here.
+- src/services/: Has the services used, like API
+- src/views/: Here you find the 'sites' active on the website.
+- public/: Static data.
 
-📝 Course Rules
-
-- Git Flow: Always use feature branches (feature/component-name).
-- No "any": Use TypeScript interfaces for all data.
-- Atomic Commits: Commit small, logical changes with descriptive messages.
-
-Happy coding! Let's build the best burger app ever. 💻🔥
