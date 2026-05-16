@@ -7,10 +7,10 @@ return(
     <header>
         <h1 className="bg-orange-500 text-white font-bold flex justify-between items-center sticky top-0 z-50">
             <Link to='/'>
-            <span>TechBurger</span>
+            <span className="ml-3">TechBurger</span>
             </Link>
             <Link to='/cart'>
-            <span className= "bg-orange-600">{cartItems.length} tuotetta</span>
+            <span className= "bg-orange-600 mr-3">{cartItems.length} tuotetta</span>
             </Link>
         </h1>
     </header>
