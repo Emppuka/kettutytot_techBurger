@@ -3,9 +3,10 @@ import type { Product } from "../types";
 interface ProductCardProps{
     product: Product;
     onSelect: (product: Product) => void;
+    addToCart: (product: Product) => void;
 }
 
-export default function ProductCard({product, onSelect}: ProductCardProps){
+export default function ProductCard({product, onSelect, addToCart}: ProductCardProps){
     return(
         <div onClick={() => onSelect(product)} className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition-all size-90">
             <img
@@ -20,9 +21,15 @@ export default function ProductCard({product, onSelect}: ProductCardProps){
                     {product.description}
                 </span>
 
-            <button onClick={(e) => e.stopPropagation()} className="px-3 py-1 text-xs font-bold text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition-colors shadow-sm active:scale-95">
-            Add to Cart
-            </button>
+            <button 
+  onClick={(e) => {
+    e.stopPropagation();
+    addToCart(product);
+  }} 
+  className="px-3 py-1 text-xs font-bold text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition-colors shadow-sm active:scale-95"
+>
+  Add to Cart
+</button>
             
                 
             </div>
