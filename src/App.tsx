@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import HomeView from './views/HomeView';
 import CartView from './views/CartView';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Toast from "./components/Toast";
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<HomeView />} />
           <Route path='/cart' element={<CartView />} />
         </Routes>
+        <Toast />
       </main>
       <Footer/>
       </div>
