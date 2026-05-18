@@ -14,7 +14,7 @@ const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
     >
       {/* Children-laatikko eli varsinainen modal */}
       <div 
-        className="bg-white rounded-2xl max-w-lg w-full relative overflow-hidden"
+        className="bg-white rounded-2xl max-h-[90vh] max-w-sm md:max-w-md lg:max-w-lg w-full relative overflow-y-auto"
         onClick={(e) => e.stopPropagation()} // estää sulkemisen jos klikkaa modalin sisäpuolelta
       >
         {/* X-nappi */}
