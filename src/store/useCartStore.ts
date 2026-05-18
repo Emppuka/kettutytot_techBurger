@@ -20,4 +20,5 @@ export const useCartStore = create<CartState>((set) => ({
     })),
 
     clearToast: () => set({ toastMessage: null }),
+    clearCart: () => set({ cartItems: [] }),
 }));

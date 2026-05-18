@@ -4,6 +4,7 @@ import HomeView from './views/HomeView';
 import CartView from './views/CartView';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Toast from "./components/Toast";
+import Checkout from './components/Checkout';
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeView />} />
           <Route path='/cart' element={<CartView />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Toast />
       </main>
