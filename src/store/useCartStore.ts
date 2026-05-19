@@ -6,6 +6,7 @@ interface CartState {
     toastMessage: string | null;
     addToCart: (product: Product) => void;
     clearToast: () => void;
+    clearCart: () => void;
   
 }
 
