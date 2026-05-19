@@ -39,5 +39,5 @@ This app is a learning environment for IT-engineer students. It depicts a burger
 - public/: Static data.
 
 <h2>Linkki Netlifyyn</h2>
-<a href src="kettutytot-techburger.netlify.app">Täältäpä löytyypi.</a>
+<a href="https://kettutytot-techburger.netlify.app">Täältäpä löytyypi.</a>
 
