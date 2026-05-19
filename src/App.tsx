@@ -3,7 +3,7 @@ import Footer from './components/Footer';
 import HomeView from './views/HomeView';
 import CartView from './views/CartView';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Toast from "./components/Toast";
+import Toast from './components/Toast';
 import Checkout from './components/Checkout';
 
 function App() {
